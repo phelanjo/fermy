@@ -52,6 +52,10 @@ Third, **verify versions**
     Rails version 5.2.3
     RSpec version 3.8.2
 
+### A note on conventions:
+  
+  This project uses the Ruby Style Guide enforced by `rubocop`
+
 ### Run the app:
 
   `rails THE_FINAL_PROJECT_NAME_WHICH_WILL_JUST_BE_FERMY`
