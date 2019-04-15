@@ -4,14 +4,14 @@ class Beer
   attr_accessor :beer_type
 
   def initialize(options = {})
-    @type = options[:beer_type] || default_brew_type
+    @type = options[:beer_type] || default_beer_type
   end
 
-  def brew_type?
+  def beer_type?
     beer_type
   end
 
-  def default_brew_type
+  def default_beer_type
     "Generic"
   end
 end
