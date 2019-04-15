@@ -8,6 +8,6 @@ RSpec.describe Beer do
 
   it "is type Generic unless specified" do
     beer = Beer.new
-    expect(beer.type?).to be_eq("Generic")
+    expect(beer.type?).to eq("Generic")
   end
 end
