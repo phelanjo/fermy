@@ -8,7 +8,7 @@ https://rubyinstaller.org/
 In the Linux command line, type:
 sudo apt-get install ruby-full
 
-Mac OS (Reccommended that you use Linux, but):
+Mac OS (Recommended that you use Linux, but):
 Here is a helpful site for installing ruby not on Linux
 https://rubyinstaller.org/
 
