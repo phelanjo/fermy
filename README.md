@@ -1,5 +1,15 @@
 # README
 
+~~ Fermy ~~
+
+  This application is in development by Brian Christensen and Ben Nesbit.
+
+  It is a "Brewer's Log" application, that will allow the user to log and access
+  information about their brewing process including: type of ingredients used,
+  amount of ingredients used, weather conditions, and make any additional notes
+  about the brewing process. There will also be a section for each brew that the
+  user can fill out after the brew is complete to make any notes.
+
 To get this application up and running, one must first install ruby:
 
   Linux (Recommended):
