@@ -23,6 +23,10 @@ To get this application up and running, one must first install ruby:
   https://rubyinstaller.org/
 
   Windows (Seriously, just use Linux):
+  If you don't want to dual-boot or switch over to Linux, you easily run a
+  Linux subsystem on your computer, such as Ubuntu:
+  https://www.maketecheasier.com/install-linux-subsystem-for-windows10/
+
   I guess if you really, REALLY don't want to use Linux or a Linux subsystem,
   you can follow the instructions here:
   https://rubyinstaller.org/
