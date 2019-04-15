@@ -5,12 +5,22 @@
   This application is in development by Brian Christensen and Ben Nesbit.
 
   It is a "Brewer's Log" application that will allow the user to log and access
-  information about their brewing process including: type of ingredients used,
-  amount of ingredients used, weather conditions, and make any additional notes
-  about the brewing process. There will also be a section for each brew that the
-  user can fill out after the brew is complete to make any notes.
+  information about their brewing process including:
 
-To get this application up and running, one must first install **Ruby**:
+    * type of ingredients used
+    * amount of ingredients used
+    * weather conditions
+    * additional notes
+  
+  There will also be a section for each brew that the
+  user can fill out, after the brew is complete, for additional comments.
+
+### Getting Started
+
+This is a Ruby on Rails app with an RSpec test suite. In order to do anything,
+the following dependencies must be addressed.
+
+First install **Ruby**:
 
   ### Linux (Recommended):
   Here is the documentation for installing ruby and getting it up and running
@@ -30,6 +40,7 @@ To get this application up and running, one must first install **Ruby**:
   I guess if you really, REALLY don't want to use Linux or a Linux subsystem,
   you can follow the instructions here:
   https://rubyinstaller.org/
+
 
 ### Run the app:
 
