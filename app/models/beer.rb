@@ -16,6 +16,6 @@ class Beer
   end
 
   def default_beer_type
-    "Generic"
+    'Generic'
   end
 end
