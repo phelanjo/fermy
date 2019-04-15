@@ -22,17 +22,17 @@ the following dependencies must be addressed:
 
 First, install **Ruby**
 
-  ### Linux (Recommended):
+  #### Linux (Recommended):
   Here is the documentation for installing ruby and getting it up and running
   https://rubyinstaller.org/
   In the Linux command line, type:
   sudo apt-get install ruby-full
 
-  ### Mac OS (Recommended that you use Linux, but):
+  #### Mac OS (Recommended that you use Linux, but):
   Here is a helpful site for installing ruby not on Linux
   https://rubyinstaller.org/
 
-  ### Windows (Seriously, just use Linux):
+  #### Windows (Seriously, just use Linux):
   If you don't want to dual-boot or switch over to Linux, you easily run a
   Linux subsystem on your computer, such as Ubuntu:
   https://www.maketecheasier.com/install-linux-subsystem-for-windows10/
