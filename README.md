@@ -53,13 +53,15 @@ Third, **verify versions**
     RSpec version 3.8.2
 
 ### A note on conventions:
-  
+
   This project uses the Ruby Style Guide enforced by `rubocop`
 
 ### Run the app:
 
-  From the command line, in the project directory, execute `rails server`
-  Once the server is running locally, use a browser to navigate to `localhost:3000`
+  From the command line, in the project directory, execute:
+    `$ rails server`
+  Once the server is running locally, use a browser to navigate to
+    `localhost:3000`
 
 ### Run the RSpec test suite:
 
