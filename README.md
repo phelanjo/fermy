@@ -11,7 +11,7 @@
     * amount of ingredients used
     * weather conditions
     * additional notes
-  
+
   There will also be a section for each brew that the
   user can fill out, after the brew is complete, for additional comments.
 
@@ -47,6 +47,7 @@ First install **Ruby**:
   `rails THE_FINAL_PROJECT_NAME_WHICH_WILL_JUST_BE_FERMY`
 
 ### Run the RSpec test suite:
+
   From the command line, in the repo directory, execute `rspec`
 
 Things you may want to cover:
