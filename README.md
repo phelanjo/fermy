@@ -58,7 +58,8 @@ Third, **verify versions**
 
 ### Run the app:
 
-  `rails THE_FINAL_PROJECT_NAME_WHICH_WILL_JUST_BE_FERMY`
+  From the command line, in the project directory, execute `rails server`
+  Once the server is running locally, use a browser to navigate to `localhost:3000`
 
 ### Run the RSpec test suite:
 
