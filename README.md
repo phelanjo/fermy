@@ -1,11 +1,11 @@
 # README
 
-~~ Fermy ~~
+### ~~ Fermy ~~
 
   This application is in development by Brian Christensen and Ben Nesbit.
 
-  It is a "Brewer's Log" application that will allow the user to log and access
-  information about their brewing process including:
+  It is a "Brewer's Log" application for any and all things fermented that will allow the user to log and access
+  information about the brewing process including:
 
     * type of ingredients used
     * amount of ingredients used
@@ -18,9 +18,9 @@
 ### Getting Started
 
 This is a Ruby on Rails app with an RSpec test suite. In order to do anything,
-the following dependencies must be addressed.
+the following dependencies must be addressed:
 
-First install **Ruby**:
+First, install **Ruby**
 
   ### Linux (Recommended):
   Here is the documentation for installing ruby and getting it up and running
@@ -41,6 +41,16 @@ First install **Ruby**:
   you can follow the instructions here:
   https://rubyinstaller.org/
 
+Second, install **Rails**
+
+  gem install rails
+
+Third, **verify versions**
+
+  This project uses:
+    Ruby version 2.6.0
+    Rails version 5.2.3
+    RSpec version 3.8.2
 
 ### Run the app:
 
@@ -49,21 +59,3 @@ First install **Ruby**:
 ### Run the RSpec test suite:
 
   From the command line, in the repo directory, execute `rspec`
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
