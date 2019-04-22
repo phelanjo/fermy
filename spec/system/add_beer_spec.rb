@@ -5,5 +5,9 @@ RSpec.describe "adding a beer", type: :system do
       visit new_beer_path
       fill_in "Name", with: "Fake Beer"
       fill_in "Beer Type", with: "Fake IPA"
+      click_on("Create Beer")
+      visit beers_path
+      expect(page).to have_content("Fake Beer")
+      expect(page).to have_content("Fake IPA")
   end
 end
