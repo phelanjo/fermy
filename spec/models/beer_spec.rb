@@ -23,4 +23,8 @@ RSpec.describe Beer do
   it 'is brew-type Generic unless specified' do
     expect(beer.beer_type?).to eq('Generic')
   end
+
+  it 'does have a bret-type if specified' do
+    expect(fake_beer.beer_type?).to eq('IPA')
+  end
 end
