@@ -8,12 +8,16 @@ RSpec.describe Beer do
     beer.exists?
   end
 
-  it 'can be created with a name' do
-    expect(fake_beer.name?).to eq('Fake')
+  it 'can be created not empty' do
+    fake_beer.exists?
   end
 
-  it 'has does not have a name if no name specified' do
+  it 'does not have a name if no name specified' do
     expect(beer.name?).to eq(nil)
+  end
+
+  it 'does have a name if specified' do
+    expect(fake_beer.name?).to eq('Fake')
   end
 
   it 'is brew-type Generic unless specified' do
