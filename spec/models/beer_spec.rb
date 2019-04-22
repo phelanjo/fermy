@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Beer do
   let(:beer) { Beer.new }
-  let(:fake_beer) {Beer.new(name: 'Fake', beer_type: 'IPA')}
+  let(:fake_beer) {Beer.new(name: 'Fake Beer', beer_type: 'Fake IPA')}
 
   it 'can be created empty' do
     beer.exists?
@@ -17,7 +17,7 @@ RSpec.describe Beer do
   end
 
   it 'does have a name if specified' do
-    expect(fake_beer.name?).to eq('Fake')
+    expect(fake_beer.name?).to eq('Fake Beer')
   end
 
   it 'is brew-type Generic unless specified' do
@@ -25,6 +25,6 @@ RSpec.describe Beer do
   end
 
   it 'does have a bret-type if specified' do
-    expect(fake_beer.beer_type?).to eq('IPA')
+    expect(fake_beer.beer_type?).to eq('Fake IPA')
   end
 end
