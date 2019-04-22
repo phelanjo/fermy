@@ -1,14 +1,19 @@
 # beer.rb
 
 class Beer
-  attr_accessor :beer_type
+  attr_accessor :beer_type, :name
 
   def initialize(options = {})
     @beer_type = options[:beer_type] || default_beer_type
+    @name = options[:name] || nil
   end
 
   def exists?
     true
+  end
+
+  def name?
+    name
   end
 
   def beer_type?
@@ -18,4 +23,5 @@ class Beer
   def default_beer_type
     'Generic'
   end
+
 end
