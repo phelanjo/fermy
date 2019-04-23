@@ -20,8 +20,8 @@ class Beer < ApplicationRecord
     beer_type
   end
 
-  def default_beer_type
-    'Generic'
-  end
+  # def default_beer_type
+  #   'Generic'
+  # end
 
 end
