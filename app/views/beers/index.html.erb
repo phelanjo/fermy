@@ -1,0 +1,17 @@
+<h1>All Beerss</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Beer Name</td>
+      <td>Beer Type</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @beers.each do |beer| %>
+      <tr>
+        <td><%= beer.name %></td>
+        <td><%= beer.beer_type %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
