@@ -1,5 +1,5 @@
 class CreatesBeer
-  attr_accessor :name, :beer_type
+  attr_accessor :name, :beer, :beer_type
 
   def initialize(options = {})
     @name = options[:name] || nil

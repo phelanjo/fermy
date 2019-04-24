@@ -10,4 +10,9 @@ class BeersController < ApplicationController
     @workflow.create
     redirect_to beers_path
   end
+
+  def index
+    @beers = Beer.all
+  end
+
 end
