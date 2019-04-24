@@ -7,7 +7,7 @@ class CreatesBeer
   end
 
   def build
-    self.beer = Beer.new(name: name, beer_type: generic)
+    self.beer = Beer.new(name: name, beer_type: beer_type)
   end
 
   def default_beer_type

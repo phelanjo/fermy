@@ -1,11 +1,11 @@
-<h1>New Project</h1>
+<h1>New Beer</h1>
 
-<%= form_for(@project) do |f| %>
+<%= form_for(@beer) do |f| %>
   <%= f.label(:name) %>
   <%= f.text_field(:name) %>
   <br />
   <%= f.label(:beer_type) %>
-  <%= f.text_area("Beer Type") %>
+  <%= text_area_tag("beer_type") %>
   <br />
   <%= f.submit %>
 <% end %>
