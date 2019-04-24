@@ -3,7 +3,12 @@ class CreatesBeer
 
   def initialize(options = {})
     @name = options[:name] || nil
-    @beer_type = options[:beer_type] || default_beer_type
+    if (options[:beer_type] == "" || options[:beer_type] == nil)
+      @beer_type = default_beer_type
+    else
+      @beer_type = options[:beer_type]
+    end
+    # @beer_type = options[:beer_type].blank? ? options[:beer_type] : default_beer_type
   end
 
   def create
