@@ -8,8 +8,8 @@ RSpec.describe "adding a beer", type: :system do
       visit beers_path
       @beer = Beer.find_by(name: "Fake Beer")
       expect(page).to have_selector("#beer_#{@beer.id} .name", text: "Fake Beer")
-      # expect(page).to have_content("Fake Beer")
-      expect(page).to have_content("Generic")
+      expect(page).to have_selector("#beer_#{@beer.id} .beer_type", text: "Generic")
+      # expect(page).to have_content("Generic")
   end
 
   it "allows a user to create a beer with a name and beer type" do
