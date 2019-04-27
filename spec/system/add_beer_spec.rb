@@ -11,6 +11,13 @@ RSpec.describe "adding a beer", type: :system do
       expect(page).to have_selector("#beer_#{@beer.id} .beer_type", text: "Generic")
   end
 
+  it "does not allow a user to create a beer without a name" do
+    visit new_beer_path
+    fill_in "Name", with: ""
+    click_on("Create Beer")
+    expect(page).to have_selector(".new_beer")
+  end
+
   it "allows a user to create a beer with a name and beer type" do
     visit new_beer_path
     fill_in "Name", with: "Fake Beer2"
