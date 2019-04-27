@@ -6,7 +6,9 @@ RSpec.describe "adding a beer", type: :system do
       fill_in "Name", with: "Fake Beer"
       click_on("Create Beer")
       visit beers_path
-      expect(page).to have_content("Fake Beer")
+      @beer = Beer.find_by(name: "Fake Beer")
+      expect(page).to have_selector("#beer_#{@beer.id} .name", text: "Fake Beer")
+      # expect(page).to have_content("Fake Beer")
       expect(page).to have_content("Generic")
   end
 
