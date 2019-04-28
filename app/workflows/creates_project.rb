@@ -11,3 +11,4 @@ class CreatesProject
     project.ingredients = convert_string_to_ingredients
     project
   end
+end
