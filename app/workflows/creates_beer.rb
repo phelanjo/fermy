@@ -9,16 +9,22 @@ class CreatesBeer
       @beer_type = options[:beer_type]
     end
     # @beer_type = options[:beer_type].blank? ? options[:beer_type] : default_beer_type
+    @success = false
   end
 
-  def create
-    build
-    beer.save
+  def success?
+    @success
   end
 
   def build
     self.beer = Beer.new(name: name, beer_type: beer_type)
     beer
+  end
+
+  def create
+    build
+    result = beer.save
+    @success = result
   end
 
   def default_beer_type
