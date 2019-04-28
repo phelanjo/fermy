@@ -27,5 +27,13 @@ RSpec.describe CreatesProject do
       specify { expect(ingredients.first).to have_attributes(
         name: 'Fish Sauce', amount: 1) }
     end
+
+    describe 'failure cases' do
+      it 'fails when trying to save a project with no name' do
+        creator = CreatesProject.new(name: '', ingredients_string: '')
+        creator.create
+        expect(creator).not_to be_a_success
+      end
+    end
   end
 end
