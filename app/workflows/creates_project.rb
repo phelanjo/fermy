@@ -4,6 +4,11 @@ class CreatesProject
   def initialize(name: '', ingredients_string: '')
     @name = name
     @ingredients_string = ingredients_string
+    @success = false
+  end
+
+  def success?
+    @success
   end
 
   def build
@@ -14,7 +19,8 @@ class CreatesProject
 
   def create
     build
-    project.save
+    result = project.save
+    @success = result
   end
 
   def convert_string_to_ingredients
