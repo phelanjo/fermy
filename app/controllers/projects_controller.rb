@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
 
   def create
     @workflow = CreatesProject.new(
-      name: params[:project][:ingredients],
+      name: params[:project][:name],
       ingredients_string: params[:project][:ingredients]
     )
     @workflow.create
