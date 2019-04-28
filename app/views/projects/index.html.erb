@@ -3,15 +3,15 @@
     <thead>
       <tr>
         <td>Project Name</td>
-        <td>Total Project Size</td>
+        <td>Total Num Ingredients</td>
       </tr>
     </thead>
     <tbody>
       <% @projects.each do |project| %>
-        <tr>
-          <td><%= project.name %></td>
-          <td><%= project.total_size %></td>
+        <tr class="project-row" id="<%= dom_id(project) %>">
+          <td class="name"><%= project.name %></td>
+          <td class="total-size"><%= project.total_size %></td>
         </tr>
       <% end %>
-  </tbody>
+    </tbody>
 </table>
