@@ -1,12 +1,13 @@
-class Project
-  attr_accessor :ingredients
-
-  def initialize
-    @ingredients = []
-  end
+class Project < ApplicationRecord
+  has_many :ingredients, dependent: :destroy
+  validates :name, presence: true
 
   def draft
     ingredients.empty?
+  end
+
+  def name?
+    name
   end
 
   def total_size

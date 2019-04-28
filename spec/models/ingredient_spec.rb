@@ -7,9 +7,9 @@ RSpec.describe Ingredient do
     expect(ingredient.amount).to be_nil
   end
 
-  it 'must have a name' do
-    expect(ingredient.name).not_to be_empty
-  end
+  # it 'must have a name' do
+  #   expect(ingredient.name).not_to be_empty
+  # end
 
   describe 'names' do
     let(:ingredient) { Ingredient.new(name: 'hops') }
