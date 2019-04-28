@@ -1,9 +1,5 @@
-class Project
-  attr_accessor :ingredients
-
-  def initialize
-    @ingredients = []
-  end
+class Project < ApplicationRecord
+  has_many :ingredients, dependent: :destroy
 
   def draft
     ingredients.empty?
