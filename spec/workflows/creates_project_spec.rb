@@ -12,7 +12,8 @@ RSpec.describe CreatesProject do
   describe 'ingredients string parsing' do
     it 'handles an empty string' do
       creator = CreatesProject.new(
-        name: 'Project Kimchi', ingredients_string: ''
+        name: 'Project Kimchi',
+        ingredients_string: ''
       )
       ingredients = creator.convert_string_to_ingredients
       expect(ingredients).to be_empty
@@ -20,11 +21,15 @@ RSpec.describe CreatesProject do
 
     it 'handles a single string' do
       creator = CreatesProject.new(
-        name: 'Project Kimchi', ingredients_string: 'Fish Sauce'
+        name: 'Project Kimchi',
+        ingredients_string: 'Fish Sauce'
       )
       ingredients = creator.convert_string_to_ingredients
       expect(ingredients.size).to eq(1)
-      expect(ingredients.first).to have_attributes(name: 'Fish Sauce', size: 1)
+      expect(ingredients.first).to have_attributes(
+        name: 'Fish Sauce',
+        amount: 1
+      )
     end
   end
 end
