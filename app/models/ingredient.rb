@@ -1,9 +1,8 @@
 class Ingredient
-  def initialize
-    @amount = nil
-  end
+  attr_accessor :name, :amount
 
-  def amount
-    @amount
+  def initialize(params = {})
+    @name = params.fetch(:name, 'default')
+    @amount = params.fetch(:amount, nil)
   end
 end
