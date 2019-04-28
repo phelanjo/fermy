@@ -1,6 +1,7 @@
 # beer.rb
 
 class Beer < ApplicationRecord
+  validates :name, presence: true
 
   def exists?
     true
