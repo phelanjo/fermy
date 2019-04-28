@@ -23,4 +23,10 @@ class CreatesProject
       Ingredient.new(name: name, amount: amount_as_integer(amount_string))
     end
   end
+
+  def amount_as_integer(amount_string)
+    return 1 if amount_string.blank?
+
+    [amount_string.to_i, 1].max
+  end
 end
