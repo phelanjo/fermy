@@ -6,7 +6,7 @@ RSpec.describe Beer do
                             beer_type: 'Fake IPA',
                             description: 'This is a fake beer for unit testing')}
 
-  it 'cannot be created empty' do
+  it 'cannot be created without a name' do
     expect(beer).to be_invalid
   end
 
