@@ -20,11 +20,11 @@ RSpec.describe Beer do
     expect(fake_beer.name?).to eq('Fake Beer')
   end
 
-  it 'is brew-type nil unless specified' do
+  it 'is beer_type nil unless specified' do
     expect(beer.beer_type?).to eq(nil)
   end
 
-  it 'does have a bret-type if specified' do
+  it 'does have a beer_type if specified' do
     expect(fake_beer.beer_type?).to eq('Fake IPA')
   end
 
