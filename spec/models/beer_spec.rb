@@ -14,10 +14,6 @@ RSpec.describe Beer do
     expect(fake_beer).to be_valid
   end
 
-  it 'does not have a name if no name specified' do
-    expect(beer.name?).to eq(nil)
-  end
-
   it 'does have a name if specified' do
     expect(fake_beer.name?).to eq('Fake Beer')
   end
