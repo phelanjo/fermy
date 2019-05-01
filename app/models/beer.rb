@@ -15,4 +15,7 @@ class Beer < ApplicationRecord
     beer_type
   end
 
+  def description?
+  end
+
 end
