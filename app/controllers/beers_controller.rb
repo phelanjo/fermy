@@ -6,7 +6,8 @@ class BeersController < ApplicationController
   def create
     @workflow = CreatesBeer.new(
       name: params[:beer][:name],
-      beer_type: params[:beer][:beer_type])
+      beer_type: params[:beer][:beer_type],
+      description: params[:beer][:description])
     @workflow.create
     if (@workflow.success?)
       redirect_to beers_path
