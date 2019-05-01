@@ -10,7 +10,6 @@ RSpec.describe Beer do
 
   it 'can be created not empty' do
     expect(fake_beer).to be_valid
-    # fake_beer.exists?
   end
 
   it 'does not have a name if no name specified' do
