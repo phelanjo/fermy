@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Beer do
   let(:beer) { Beer.new }
-  let(:fake_beer) {Beer.new(name: 'Fake Beer', beer_type: 'Fake IPA')}
+  let(:fake_beer) {Beer.new(name: 'Fake Beer', beer_type: 'Fake IPA', description: 'This is a fake beer for unit testing')}
 
   it 'can be created empty' do
     beer.exists?
