@@ -4,12 +4,13 @@ RSpec.describe Beer do
   let(:beer) { Beer.new }
   let(:fake_beer) {Beer.new(name: 'Fake Beer', beer_type: 'Fake IPA', description: 'This is a fake beer for unit testing')}
 
-  it 'can be created empty' do
-    beer.exists?
+  it 'cannot be created empty' do
+    expect(beer).to be_invalid
   end
 
   it 'can be created not empty' do
-    fake_beer.exists?
+    expect(fake_beer).to be_valid
+    # fake_beer.exists?
   end
 
   it 'does not have a name if no name specified' do
