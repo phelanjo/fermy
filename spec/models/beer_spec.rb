@@ -2,12 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Beer do
   let(:beer) { Beer.new }
-<<<<<<< HEAD
   let(:fake_beer) { Beer.new(
     name: 'Fake Beer',
     beer_type: 'Fake IPA',
     description: 'This is a fake beer for unit testing') }
-=======
 
   it 'cannot be created without a name' do
     expect(beer).to be_invalid
