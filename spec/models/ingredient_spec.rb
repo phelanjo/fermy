@@ -7,12 +7,17 @@ RSpec.describe Ingredient do
     expect(ingredient.amount).to be_nil
   end
 
-  # it 'must have a name' do
-  #   expect(ingredient.name).not_to be_empty
-  # end
+  it 'must have a name' do
+    expect(ingredient).to be_invalid
+  end
 
   describe 'names' do
+    let(:project) { Project.new(name: 'test') }
     let(:ingredient) { Ingredient.new(name: 'hops') }
+
+    it 'is valid with user given name' do
+      expect(ingredient).to be_valid
+    end
 
     it 'allow a user to provide the name' do
       expect(ingredient.name).to eq('hops')

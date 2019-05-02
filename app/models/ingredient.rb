@@ -1,3 +1,4 @@
 class Ingredient < ApplicationRecord
-  belongs_to :project
+  belongs_to :project, optional: true
+  validates :name, presence: true
 end
