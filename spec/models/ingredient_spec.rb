@@ -3,9 +3,16 @@ require 'rails_helper.rb'
 RSpec.describe Ingredient do
   let(:ingredient) { Ingredient.new }
   let(:valid_ingredient) { Ingredient.new(name: 'hops') }
+  let(:valid_ingredient_with_amount) do
+    Ingredient.new(name: 'barley', amount: 4)
+  end
 
   it 'does not have an amount for a new ingredient' do
     expect(ingredient.amount).to be_nil
+  end
+
+  it 'has the user specified amount' do
+    expect(valid_ingredient_with_amount.amount).to eq(4)
   end
 
   it 'is not valid without a user specified name' do
