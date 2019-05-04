@@ -13,7 +13,6 @@ RSpec.describe Ingredient do
 
   describe 'names' do
     let(:project) { Project.new(name: 'test') }
-    let(:ingredient) { Ingredient.new(name: 'hops') }
 
     it 'is valid with user given name' do
       expect(ingredient).to be_valid
