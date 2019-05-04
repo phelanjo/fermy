@@ -3,15 +3,30 @@ require 'rails_helper.rb'
 RSpec.describe Ingredient do
   let(:ingredient) { Ingredient.new }
   let(:valid_ingredient) { Ingredient.new(name: 'hops') }
+
   let(:valid_ingredient_with_amount) do
     Ingredient.new(name: 'barley', amount: 4)
   end
+
   let(:valid_ingredient_with_description) do
     Ingredient.new(
       name: 'citra hops',
       amount: 2,
       description: 'dry hopped ingredient'
     )
+  end
+
+  let(:complete_ingredient) do
+    Ingredient.new(
+      name: 'cascades hops',
+      amount: 5.5,
+      unit: 'oz',
+      description: 'addl dry hopping type'
+    )
+  end
+
+  it 'has a unit of measurement' do
+    expect(complete_ingredient.unit).to eq('oz')
   end
 
   it 'can have a description' do
