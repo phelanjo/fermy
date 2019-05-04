@@ -1,55 +1,56 @@
 require 'rails_helper.rb'
 
 RSpec.describe Ingredient do
-  let(:ingredient) { Ingredient.new }
-  let(:valid_ingredient) { Ingredient.new(name: 'hops') }
-
-  let(:valid_ingredient_with_amount) do
-    Ingredient.new(name: 'barley', amount: 4)
-  end
-
-  let(:valid_ingredient_with_description) do
-    Ingredient.new(
-      name: 'citra hops',
-      amount: 2,
-      description: 'dry hopped ingredient'
-    )
-  end
-
-  let(:complete_ingredient) do
-    Ingredient.new(
-      name: 'cascades hops',
-      amount: 5.5,
-      unit: 'oz',
-      description: 'addl dry hopping type'
-    )
-  end
-
-  it 'has a unit of measurement' do
-    expect(complete_ingredient.unit).to eq('oz')
-  end
-
-  it 'can have a description' do
-    expect(valid_ingredient_with_description.description).to eq('dry hopped ingredient')
-  end
-
-  it 'does not have an amount for a new ingredient' do
-    expect(ingredient.amount).to be_nil
-  end
-
-  it 'has the user specified amount' do
-    expect(valid_ingredient_with_amount.amount).to eq(4)
-  end
-
-  it 'is not valid without a user specified name' do
+  it 'is valid with only a name specified' do
+    ingredient = Ingredient.new
+    expect(ingredient.name).to eq(nil)
     expect(ingredient).to be_invalid
+    ingredient.name = 'TEST'
+    expect(ingredient).to be_valid
   end
 
-  it 'is valid with a user specified name' do
-    expect(valid_ingredient).to be_valid
+  describe 'default state' do
+    let(:default_ingredient) do
+      Ingredient.new(name: 'fish sauce')
+    end
+
+    it 'has a name' do
+      expect(default_ingredient.name).to eq('fish sauce')
+    end
+
+    it 'does not have an amount' do
+      expect(default_ingredient.amount).to eq(nil)
+    end
+
+    it 'does not have a unit of measure' do
+      expect(default_ingredient.unit).to eq(nil)
+    end
+
+    it 'does not have a description' do
+      expect(default_ingredient.description).to eq(nil)
+    end
   end
 
-  it 'allows a user to provide a name' do
-    expect(valid_ingredient.name).to eq('hops')
+  describe 'a complete ingredient object' do
+    let(:complete_ingredient) do
+      Ingredient.new(
+        name: 'cascade hops',
+        amount: 5.5,
+        unit: 'oz',
+        description: 'dry hopping for Fake IPA'
+      )
+    end
+
+    it 'has a unit of measurement' do
+      expect(complete_ingredient.unit).to eq('oz')
+    end
+
+    it 'has a description' do
+      expect(complete_ingredient.description).to eq('dry hopping for Fake IPA')
+    end
+
+    it 'has the user specified amount' do
+      expect(complete_ingredient.amount).to eq(5.5)
+    end
   end
 end
