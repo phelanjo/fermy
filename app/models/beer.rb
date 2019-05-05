@@ -22,4 +22,8 @@ class Beer < ApplicationRecord
   def replace_description(new_description)
     self.description = new_description
   end
+
+  def add_description(added_description)
+
+  end
 end
