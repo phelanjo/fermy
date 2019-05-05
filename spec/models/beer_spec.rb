@@ -20,7 +20,7 @@ RSpec.describe Beer do
   end
 
   it 'does have a name if specified' do
-    expect(fake_beer.name?).to eq('Fake Beer')
+    expect(fake_beer).to have_name('Fake Beer')
   end
 
   it 'is beer_type nil unless specified' do
