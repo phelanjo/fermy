@@ -15,7 +15,7 @@ RSpec.describe Beer do
     expect(beer).to be_invalid
   end
 
-  it 'can be created not empty' do
+  it 'can be created with a name' do
     expect(fake_beer).to be_valid
   end
 
