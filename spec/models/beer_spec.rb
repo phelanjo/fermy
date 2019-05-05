@@ -31,9 +31,11 @@ RSpec.describe Beer do
 
   it 'has a nil description if nothing is entered' do
     expect(beer).to have_beer_description(nil)
+    expect(beer).not_to have_beer_description("");
   end
 
   it 'has the description entered by user' do
     expect(fake_beer).to have_beer_description("This is a fake beer for unit testing")
+    expect(fake_beer).not_to have_beer_description("");
   end
 end
