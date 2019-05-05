@@ -10,4 +10,8 @@ RSpec::Matchers.define :be_of_beer_type do |expected|
   failure_message do |actual|
     "expected project #{actual.beer_type} to be beer type #{expect}, was #{actual}"
   end
+
+  failure_message_when_negated do |acutal|
+    "expected beer #{actual.name} not to be of type #{expected}, but it was"
+  end
 end
