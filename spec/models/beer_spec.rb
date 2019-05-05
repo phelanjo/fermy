@@ -21,6 +21,7 @@ RSpec.describe Beer do
 
   it 'is beer_type nil unless specified' do
     expect(beer).to be_of_beer_type(nil)
+    expect(beer).not_to be_of_beer_type('Generic')
   end
 
   it 'does have a beer_type if specified' do
