@@ -24,6 +24,6 @@ class Beer < ApplicationRecord
   end
 
   def add_description(added_description)
-
+    self.description << added_description
   end
 end
