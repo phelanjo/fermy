@@ -18,4 +18,7 @@ class Beer < ApplicationRecord
   def description?
     description
   end
+
+  def update_description
+  end
 end
