@@ -18,5 +18,4 @@ class Beer < ApplicationRecord
   def description?
     description
   end
-
 end

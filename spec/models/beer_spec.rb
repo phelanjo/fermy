@@ -6,6 +6,10 @@ RSpec.describe Beer do
     name: 'Fake Beer',
     beer_type: 'Fake IPA',
     description: 'This is a fake beer for unit testing') }
+  let(:fake_beer_to_change_description) { Beer.new(
+    name: 'Fake Beer Two',
+    beer_type: 'Fake Pilsner',
+    description: 'This is the first FAKE description') }
 
   it 'cannot be created without a name' do
     expect(beer).to be_invalid
@@ -37,5 +41,12 @@ RSpec.describe Beer do
   it 'has the description entered by user' do
     expect(fake_beer).to have_beer_description("This is a fake beer for unit testing")
     expect(fake_beer).not_to have_beer_description("");
+  end
+
+  it 'can update its description' do
+    expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
+    fake_beer_to_change_description.update_description("This is the second FAKE description")
+    expect(fake_beer_to_change_description).not_to have_beer_description("This is the first FAKE description")
+    expect(fake_beer_to_change_description).to have_beer_description("This is the second FAKE description")
   end
 end
