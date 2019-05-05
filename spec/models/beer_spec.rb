@@ -43,9 +43,9 @@ RSpec.describe Beer do
     expect(fake_beer).not_to have_beer_description("");
   end
 
-  it 'can update its description' do
+  it 'can replace its description' do
     expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
-    fake_beer_to_change_description.update_description("This is the second FAKE description")
+    fake_beer_to_change_description.replace_description("This is the second FAKE description")
     expect(fake_beer_to_change_description).not_to have_beer_description("This is the first FAKE description")
     expect(fake_beer_to_change_description).to have_beer_description("This is the second FAKE description")
   end
