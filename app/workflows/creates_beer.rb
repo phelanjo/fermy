@@ -9,7 +9,7 @@ class CreatesBeer
       @beer_type = options[:beer_type]
     end
     @description = options[:description] || nil
-    # @beer_type = options[:beer_type].blank? ? options[:beer_type] : default_beer_type
+    # @beer_type = options[:beer_type].empty? ? options[:beer_type] : default_beer_type
     @success = false
   end
 
