@@ -30,10 +30,10 @@ RSpec.describe Beer do
   end
 
   it 'has a nil description if nothing is entered' do
-    expect(beer.description?).to eq(nil)
+    expect(beer).to have_beer_description(nil)
   end
 
   it 'has the description entered by user' do
-    expect(fake_beer.description?).to eq("This is a fake beer for unit testing")
+    expect(fake_beer).to have_beer_description("This is a fake beer for unit testing")
   end
 end
