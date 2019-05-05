@@ -20,7 +20,7 @@ RSpec.describe Beer do
   end
 
   it 'is beer_type nil unless specified' do
-    expect(beer.beer_type?).to eq(nil)
+    expect(beer).to be_of_beer_type(nil)
   end
 
   it 'does have a beer_type if specified' do
