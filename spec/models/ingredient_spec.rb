@@ -41,16 +41,19 @@ RSpec.describe Ingredient do
       )
     end
 
-    it 'has a unit of measurement' do
-      expect(complete_ingredient.unit).to eq('oz')
+    let(:incomplete_ingredient) do
+      Ingredient.new(
+        name: 'cascade hops',
+        amount: 5.5
+      )
     end
 
-    it 'has a description' do
-      expect(complete_ingredient.description).to eq('dry hopping for Fake IPA')
+    it 'is a complete object' do
+      expect(complete_ingredient).to be_complete
     end
 
-    it 'has the user specified amount' do
-      expect(complete_ingredient.amount).to eq(5.5)
+    it 'is not a complete object' do
+      expect(incomplete_ingredient).not_to be_complete
     end
   end
 end
