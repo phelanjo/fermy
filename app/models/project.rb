@@ -10,6 +10,10 @@ class Project < ApplicationRecord
     name
   end
 
+  def add_ingredient(ingredient)
+    ingredient.name ? ingredients << ingredient : return
+  end
+
   def total_size
     ingredients.size
   end

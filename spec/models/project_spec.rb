@@ -8,8 +8,11 @@ RSpec.describe Project do
     expect(project.draft).to be_truthy
   end
 
-  it 'allows an ingredient to be added' do
-    project.ingredients << ingredient
+  it 'allows a valid ingredient to be added' do
+    project.add_ingredient(ingredient)
+    expect(project.total_size).to eq(0)
+    ingredient.name = 'TEST'
+    project.add_ingredient(ingredient)
     expect(project.total_size).to eq(1)
   end
 end
