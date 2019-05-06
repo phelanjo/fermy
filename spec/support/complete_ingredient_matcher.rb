@@ -1,9 +1,9 @@
 RSpec::Matchers.define :be_complete do |expected|
   match do |actual|
-    actual.name != nil
-    actual.amount != nil
-    actual.unit != nil
-    actual.description != nil
+    !actual.name.nil?
+    !actual.amount.nil?
+    !actual.unit.nil?
+    !actual.description.nil?
   end
 
   description do
