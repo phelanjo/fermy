@@ -9,7 +9,7 @@ RSpec.describe Ingredient do
     expect(ingredient).to be_valid
   end
 
-  describe 'default state' do
+  describe 'minimum' do
     let(:default_ingredient) do
       Ingredient.new(name: 'fish sauce')
     end
@@ -54,6 +54,24 @@ RSpec.describe Ingredient do
 
     it 'is not a complete object' do
       expect(incomplete_ingredient).not_to be_complete
+    end
+
+    it 'has a description that does not exceed the maximum length' do
+      expect(complete_ingredient.description.size).to be < 500
+    end
+
+    it 'throws an error if a description is longer than 500 characters' do
+      long_description = 'A really super long description full of
+        nonsense and more nonsense. Really enjoying some Chopin right now. Time
+        for the lorem ipsum...Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        qui officia deserunt mollit anim id est laborum.'
+      expect(long_description.size).to be > 500
+      # expect(complete_ingredient.add_description(long_description)).to raise_exception('Description too large')
     end
   end
 end
