@@ -57,6 +57,7 @@ RSpec.describe Ingredient do
     end
 
     it 'is not a complete object' do
+      # byebug
       expect(incomplete_ingredient).to be_complete(false)
     end
 
