@@ -53,11 +53,11 @@ RSpec.describe Ingredient do
     end
 
     it 'is a complete object' do
-      expect(complete_ingredient).to be_complete(true)
+      expect(complete_ingredient).to be_complete_ingredient
     end
 
-    it 'is not a complete object' do
-      expect(incomplete_ingredient).to be_complete(false)
+    it 'is not a complete object if any field is missing' do
+      expect(incomplete_ingredient).not_to be_complete_ingredient
     end
 
     it 'has a description that does not exceed the maximum length' do
