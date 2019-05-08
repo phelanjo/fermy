@@ -15,4 +15,15 @@ class Beer < ApplicationRecord
     beer_type
   end
 
+  def description?
+    description
+  end
+
+  def replace_description(new_description)
+    self.description = new_description
+  end
+
+  def add_description(added_description)
+    self.description << added_description
+  end
 end
