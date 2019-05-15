@@ -54,9 +54,9 @@ RSpec.describe Beer do
   end
 
   describe "without a name" do
-    let(:factory_beer) { build_stubbed(:beer, name: "") }
+    let(:factory_beer) { build_stubbed(:beer) }
 
-    it 'cannot be created without a name' do
+    it 'cannot be created' do
       expect(factory_beer).to be_invalid
     end
   end
