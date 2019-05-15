@@ -17,7 +17,7 @@ RSpec.describe Beer do
     end
   end
 
-  describe "with a name" do
+  describe "with user input" do
     let(:factory_beer) { build(:beer, name: "Fake Factory Beer",
                 beer_type: "Fake Factory IPA",
                 description: "First description") }
