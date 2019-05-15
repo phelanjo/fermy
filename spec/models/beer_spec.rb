@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Beer do
   describe "without user input" do
-    let(:factory_beer) { build_stubbed(:beer) }
+    let(:factory_beer) { build(:beer) }
 
     it 'cannot be created' do
       expect(factory_beer).to be_invalid
@@ -18,7 +18,7 @@ RSpec.describe Beer do
   end
 
   describe "with a name" do
-    let(:factory_beer) { build_stubbed(:beer, name: "Fake Factory Beer",
+    let(:factory_beer) { build(:beer, name: "Fake Factory Beer",
                 beer_type: "Fake Factory IPA",
                 description: "First description") }
 
