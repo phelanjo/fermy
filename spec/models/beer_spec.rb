@@ -47,11 +47,11 @@ RSpec.describe Beer do
   #   expect(fake_beer_to_change_description).to have_beer_description("This is the second FAKE description")
   # end
 
-  it 'can add to its description' do
-    expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
-    fake_beer_to_change_description.add_description(", and this is added")
-    expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description, and this is added")
-  end
+  # it 'can add to its description' do
+  #   expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
+  #   fake_beer_to_change_description.add_description(", and this is added")
+  #   expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description, and this is added")
+  # end
 
   describe "without user input" do
     let(:factory_beer) { build_stubbed(:beer) }
@@ -88,6 +88,11 @@ RSpec.describe Beer do
 
     it 'has the correct description' do
       expect(factory_beer).to have_beer_description("First description")
+    end
+
+    it 'can replace its description' do
+      factory_beer.replace_description("New description")
+      expect(factory_beer).to have_beer_description("New description")
     end
   end
 end
