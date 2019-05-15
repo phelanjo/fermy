@@ -10,9 +10,11 @@ RSpec.describe Ingredient do
   end
 
   describe 'minimum' do
-    let(:default_ingredient) do
-      Ingredient.new(name: 'fish sauce')
-    end
+    let(:default_ingredient) { FactoryBot.build_stubbed(:ingredient, name: 'fish sauce') }
+
+    # let(:default_ingredient) do
+    #   Ingredient.new(name: 'fish sauce')
+    # end
 
     it 'has a name' do
       expect(default_ingredient.name).to eq('fish sauce')
