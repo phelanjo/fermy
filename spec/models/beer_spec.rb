@@ -21,7 +21,6 @@ RSpec.describe Beer do
 
   it 'does have a name if specified' do
     expect(fake_beer).to have_name('Fake Beer')
-    expect(fake_beer).not_to have_name('')
   end
 
   it 'is beer_type nil unless specified' do
@@ -52,5 +51,13 @@ RSpec.describe Beer do
     expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
     fake_beer_to_change_description.add_description(", and this is added")
     expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description, and this is added")
+  end
+
+  describe "without a name" do
+    let(:factory_beer) { build_stubbed(:beer, name: "") }
+
+    it 'cannot be created without a name' do
+      expect(factory_beer).to be_invalid
+    end
   end
 end
