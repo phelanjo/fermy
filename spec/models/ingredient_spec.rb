@@ -51,7 +51,9 @@ RSpec.describe Ingredient do
     end
 
     it 'has an ingredient description' do
-      expect(complete_ingredient).to have_ingredient_description('dry hopping for Fake IPA')
+      expect(complete_ingredient).to have_ingredient_description(
+        'dry hopping for Fake IPA'
+      )
     end
 
     it 'is a complete object' do
