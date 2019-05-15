@@ -94,5 +94,10 @@ RSpec.describe Beer do
       factory_beer.replace_description("New description")
       expect(factory_beer).to have_beer_description("New description")
     end
+
+    it 'can add to its description' do
+      factory_beer.add_description(", and this was added")
+      expect(factory_beer).to have_beer_description("First description, and this was added")
+    end
   end
 end
