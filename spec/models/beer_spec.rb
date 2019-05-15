@@ -32,14 +32,14 @@ RSpec.describe Beer do
   #   expect(fake_beer).to be_of_beer_type('Fake IPA')
   #   expect(fake_beer).not_to be_of_beer_type('Generic')
   # end
-
-  it 'has a nil description if nothing is entered' do
-    expect(beer).to have_beer_description(nil)
-  end
-
-  it 'has the description entered by user' do
-    expect(fake_beer).to have_beer_description("This is a fake beer for unit testing")
-  end
+  #
+  # it 'has a nil description if nothing is entered' do
+  #   expect(beer).to have_beer_description(nil)
+  # end
+  #
+  # it 'has the description entered by user' do
+  #   expect(fake_beer).to have_beer_description("This is a fake beer for unit testing")
+  # end
 
   it 'can replace its description' do
     expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
