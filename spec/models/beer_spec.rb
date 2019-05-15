@@ -41,11 +41,11 @@ RSpec.describe Beer do
   #   expect(fake_beer).to have_beer_description("This is a fake beer for unit testing")
   # end
 
-  it 'can replace its description' do
-    expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
-    fake_beer_to_change_description.replace_description("This is the second FAKE description")
-    expect(fake_beer_to_change_description).to have_beer_description("This is the second FAKE description")
-  end
+  # it 'can replace its description' do
+  #   expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
+  #   fake_beer_to_change_description.replace_description("This is the second FAKE description")
+  #   expect(fake_beer_to_change_description).to have_beer_description("This is the second FAKE description")
+  # end
 
   it 'can add to its description' do
     expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description")
@@ -71,7 +71,7 @@ RSpec.describe Beer do
 
   describe "with a name" do
     let(:factory_beer) { build_stubbed(:beer, name: "Fake Factory Beer",
-                beer_type: "Fake Factory IPA") }
+                beer_type: "Fake Factory IPA", description: "First description") }
 
     it 'can be created' do
       expect(factory_beer).to be_valid
