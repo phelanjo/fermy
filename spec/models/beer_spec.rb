@@ -60,4 +60,16 @@ RSpec.describe Beer do
       expect(factory_beer).to be_invalid
     end
   end
+
+  describe "with a name" do
+    let(:factory_beer) { build_stubbed(:beer, name: "Fake Factory Beer") }
+
+    it 'can be created' do
+      expect(factory_beer).to be_valid
+    end
+
+    it 'has the correct name' do
+      expect(factory_beer).to have_name("Fake Factory Beer")
+    end
+  end
 end
