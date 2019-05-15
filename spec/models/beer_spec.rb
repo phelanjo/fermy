@@ -56,12 +56,16 @@ RSpec.describe Beer do
   describe "without user input" do
     let(:factory_beer) { build_stubbed(:beer) }
 
-    it 'cannot be created with no name' do
+    it 'cannot be created' do
       expect(factory_beer).to be_invalid
     end
 
-    it 'is beer type Generic if not specified' do
+    it 'is beer type Generic' do
       expect(factory_beer).to be_of_beer_type("Generic")
+    end
+
+    it 'has no description' do
+      expect(factory_beer).to have_beer_description("")
     end
   end
 
