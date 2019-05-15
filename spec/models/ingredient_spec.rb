@@ -10,11 +10,9 @@ RSpec.describe Ingredient do
   end
 
   describe 'minimum' do
-    let(:default_ingredient) { FactoryBot.build_stubbed(:ingredient, name: 'fish sauce') }
-
-    # let(:default_ingredient) do
-    #   Ingredient.new(name: 'fish sauce')
-    # end
+    let(:default_ingredient) do
+      FactoryBot.build_stubbed(:ingredient, name: 'fish sauce')
+    end
 
     it 'has a name' do
       expect(default_ingredient.name).to eq('fish sauce')
@@ -35,7 +33,8 @@ RSpec.describe Ingredient do
 
   describe 'a complete ingredient object' do
     let(:complete_ingredient) do
-      Ingredient.new(
+      FactoryBot.build_stubbed(
+        :ingredient,
         name: 'cascade hops',
         amount: 5.5,
         unit: 'oz',
@@ -44,7 +43,8 @@ RSpec.describe Ingredient do
     end
 
     let(:incomplete_ingredient) do
-      Ingredient.new(
+      FactoryBot.build_stubbed(
+        :ingredient,
         name: 'cascade hops',
         amount: 5.5
       )
