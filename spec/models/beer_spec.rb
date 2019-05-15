@@ -76,5 +76,9 @@ RSpec.describe Beer do
     it 'has the correct name' do
       expect(factory_beer).to have_name("Fake Factory Beer")
     end
+
+    it 'has the user designated beer type' do
+      expect(factory_beer).to be_of_beer_type("Fake Factory IPA")
+    end
   end
 end
