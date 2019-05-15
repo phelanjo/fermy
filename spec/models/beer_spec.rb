@@ -53,16 +53,21 @@ RSpec.describe Beer do
     expect(fake_beer_to_change_description).to have_beer_description("This is the first FAKE description, and this is added")
   end
 
-  describe "without a name" do
+  describe "without user input" do
     let(:factory_beer) { build_stubbed(:beer) }
 
-    it 'cannot be created' do
+    it 'cannot be created with no name' do
       expect(factory_beer).to be_invalid
+    end
+
+    it 'is beer type Generic if not specified' do
+      expect(factory_beer).to be_of_beer_type("Generic")
     end
   end
 
   describe "with a name" do
-    let(:factory_beer) { build_stubbed(:beer, name: "Fake Factory Beer") }
+    let(:factory_beer) { build_stubbed(:beer, name: "Fake Factory Beer",
+                beer_type: "Fake Factory IPA") }
 
     it 'can be created' do
       expect(factory_beer).to be_valid
