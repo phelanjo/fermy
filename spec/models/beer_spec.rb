@@ -53,6 +53,9 @@ RSpec.describe Beer do
     let(:factory_beer) { build(:beer, name: "Fake Factory Beer",
                 beer_type: "Fake Factory IPA",
                 description: "First description") }
+    let(:stubbed_beer) { build(:beer, name: "Fake Factory Beer",
+                beer_type: "Fake Factory IPA",
+                description: "First description") }
 
     it 'can run the dependency' do
       result = factory_beer.perform(BigDependency.new)
@@ -62,6 +65,11 @@ RSpec.describe Beer do
     it 'can run with a fake dependency' do
       result = factory_beer.perform(FakeBigDependency.new)
       expect(result).to eq(42)
+    end
+
+    it 'can run stubbed' do
+      allow(stubbed_beer).to receive(:perform).and_return(42)
+      expect(stubbed_beer.perform(FakeBigDependency.new)).to eq(42)
     end
   end
 end
