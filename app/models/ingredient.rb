@@ -3,8 +3,8 @@ class Ingredient < ApplicationRecord
   validates :name, presence: true
 
   def add_description(description)
-    if description.size > 500
-      raise Exception.new('Description too large')
-    end
+    exception = 'Description must be less than 350 chars'
+
+    return exception if description.size > 350
   end
 end
