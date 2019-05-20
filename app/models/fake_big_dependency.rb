@@ -1,4 +1,4 @@
-class FakeBigDependency extends BigDependency
+class FakeBigDependency
   def execute
     # sleep(5)
   end
