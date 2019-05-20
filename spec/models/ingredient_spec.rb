@@ -72,7 +72,7 @@ RSpec.describe Ingredient do
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         ut...'
       expect(long_description.size).to be > 350
-      expect(incomplete_ingredient.add_description(long_description, BigDependency.new)).to eq('Description must be less than 500 chars')
+      expect(incomplete_ingredient.add_description(long_description)).to eq('Description must be less than 350 chars')
     end
   end
 end
