@@ -48,4 +48,15 @@ RSpec.describe Beer do
       expect(factory_beer).to have_beer_description("First description, and this was added")
     end
   end
+
+  describe "faking big dependency" do
+    let(:factory_beer) { build(:beer, name: "Fake Factory Beer",
+                beer_type: "Fake Factory IPA",
+                description: "First description") }
+
+    it 'can run the dependency' do
+      result = factory_beer.perform(BigDependency.new)
+      expect(result).to eq(42)
+    end
+  end
 end

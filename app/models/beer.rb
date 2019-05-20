@@ -3,6 +3,11 @@
 class Beer < ApplicationRecord
   validates :name, presence: true
 
+  def perform(big_dependency)
+    big_dependency.execute
+    return 42
+  end
+
   def exists?
     true
   end
