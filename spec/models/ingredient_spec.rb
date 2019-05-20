@@ -79,7 +79,7 @@ RSpec.describe Ingredient do
         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
         qui officia deserunt mollit anim id est laborum.'
       expect(long_description.size).to be > 500
-      # expect(complete_ingredient.add_description(long_description)).to raise_exception
+      expect(incomplete_ingredient.add_description(long_description)).to eq('Description must be less than 500 chars')
     end
   end
 end

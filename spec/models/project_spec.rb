@@ -13,16 +13,16 @@ RSpec.describe Project do
 
   it 'allows a valid ingredient to be added' do
     project.add_ingredient(ingredient)
-    expect(project.total_size).to eq(0)
+    expect(project.total_size()).to eq(0)
     ingredient.name = 'TEST'
     project.add_ingredient(ingredient)
-    expect(project.total_size).to eq(1)
+    expect(project.total_size()).to eq(1)
   end
 
   it 'calculates the number of ingredients' do
     project.add_ingredient(fake_hops)
     project.add_ingredient(fake_barley)
     project.add_ingredient(fake_water)
-    expect(project.total_size).to eq(3)
+    expect(project.total_size()).to eq(3)
   end
 end

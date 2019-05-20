@@ -14,8 +14,7 @@ class Project < ApplicationRecord
     ingredient.name ? ingredients << ingredient : return
   end
 
-  def total_size(big_dependency)
-    big_dependency.execute
+  def total_size
     ingredients.size
   end
 end
