@@ -64,10 +64,6 @@ RSpec.describe Ingredient do
       expect(incomplete_ingredient).not_to be_complete_ingredient
     end
 
-    it 'has a description that does not exceed the maximum length' do
-      expect(complete_ingredient.description.size).to be < 500
-    end
-
     it 'throws an error if a description is longer than 500 characters' do
       long_description = 'A really super long description full of
         nonsense and more nonsense. Really enjoying some Chopin right now. Time
