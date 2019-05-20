@@ -58,5 +58,10 @@ RSpec.describe Beer do
       result = factory_beer.perform(BigDependency.new)
       expect(result).to eq(42)
     end
+
+    it 'can run with a fake dependency' do
+      result = factory_beer.perform(FakeBigDependency.new)
+      expect(result).to eq(42)
+    end
   end
 end
