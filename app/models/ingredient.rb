@@ -4,8 +4,8 @@ class Ingredient < ApplicationRecord
 
   def add_description(description, big_dependency)
     big_dependency.execute
-    exception = 'Description must be less than 500 chars'
+    exception = 'Description must be less than < 350 chars'
 
-    return exception if description.size > 500
+    return exception if description.size > 350
   end
 end
