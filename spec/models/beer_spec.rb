@@ -68,8 +68,10 @@ RSpec.describe Beer do
     end
 
     it 'can run stubbed' do
-      allow(stubbed_beer).to receive(:perform).and_return(42)
-      expect(stubbed_beer.perform(FakeBigDependency.new)).to eq(42)
+      allow(stubbed_beer).to receive(:name).and_return('New Fake Beer Name')
+      expect(stubbed_beer).to have_name('New Fake Beer Name')
+      # allow(stubbed_beer).to receive(:perform).and_return(FakeBigDependency.new.execute)
+      # expect(stubbed_beer.perform('anything')).to eq(42)
     end
   end
 end
