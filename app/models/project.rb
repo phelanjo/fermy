@@ -17,4 +17,9 @@ class Project < ApplicationRecord
   def total_size
     ingredients.size
   end
+
+  def perform(big_dependency)
+    big_dependency.execute
+    'arbitrary value'
+  end
 end
