@@ -49,29 +49,19 @@ RSpec.describe Beer do
     end
   end
 
-  describe "faking big dependency" do
-    let(:factory_beer) { build(:beer, name: "Fake Factory Beer",
-                beer_type: "Fake Factory IPA",
-                description: "First description") }
-    let(:stubbed_beer) { build(:beer, name: "Fake Factory Beer",
-                beer_type: "Fake Factory IPA",
-                description: "First description") }
+  describe "big dependency" do
+    let(:mock_beer) { Beer.new }
+    let(:stubbed_beer) { Beer.new }
+    let(:big_dependency) { BigDependency.new }
 
-    it 'can run the dependency' do
-      result = factory_beer.perform(BigDependency.new)
-      expect(result).to eq(42)
+    it 'can be stubbed' do
+      allow(stubbed_beer).to receive(:perform).and_return('arbitrary value')
+      expect(stubbed_beer.perform(big_dependency)).to eq('arbitrary value')
     end
 
-    it 'can run with a fake dependency' do
-      result = factory_beer.perform(FakeBigDependency.new)
-      expect(result).to eq(42)
-    end
-
-    it 'can run stubbed' do
-      allow(stubbed_beer).to receive(:name).and_return('New Fake Beer Name')
-      expect(stubbed_beer).to have_name('New Fake Beer Name')
-      # allow(stubbed_beer).to receive(:perform).and_return(FakeBigDependency.new.execute)
-      # expect(stubbed_beer.perform('anything')).to eq(42)
+    it 'can be mocked' do
+      expect(mock_beer).to receive(:perform).and_return('arbitrary value')
+      expect(mock_beer.perform(big_dependency)).to eq('arbitrary value')
     end
   end
 end
