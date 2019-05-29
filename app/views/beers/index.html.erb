@@ -4,6 +4,7 @@
     <tr>
       <td>Beer Name</td>
       <td>Beer Type</td>
+      <td>Beer Description</td>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +12,7 @@
       <tr class="beer-row" id="<%= dom_id(beer) %>">
         <td class="name"><%= beer.name %></td>
         <td class="beer_type"><%= beer.beer_type %></td>
+        <td class="description"><%= beer.description %></td>
       </tr>
     <% end %>
   </tbody>

@@ -18,7 +18,7 @@ class CreatesBeer
   end
 
   def build
-    self.beer = Beer.new(name: name, beer_type: beer_type)
+    self.beer = Beer.new(name: name, beer_type: beer_type, description: description)
     beer
   end
 
