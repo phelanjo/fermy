@@ -16,6 +16,7 @@ RSpec.describe Recipe do
     expect(recipe.total_size).to eq(0)
     ingredient.name = 'TEST'
     recipe.add_ingredient(ingredient)
+    expect(recipe.ingredients[0]).to equal(ingredient)
     expect(recipe.total_size).to eq(1)
   end
 
