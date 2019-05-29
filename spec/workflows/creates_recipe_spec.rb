@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe CreatesProject do
-  let(:creator) { CreatesProject.new(
-    name: 'Project Kimchi',
+RSpec.describe CreatesRecipe do
+  let(:creator) { CreatesRecipe.new(
+    name: 'Recipe Kimchi',
     ingredients_string: ingredients_string) }
 
   describe 'initialization' do
     let(:ingredients_string) {''}
-    it 'creates a project given a name' do
+    it 'creates a recipe given a name' do
       creator.build
-      expect(creator.project.name).to eq('Project Kimchi')
+      expect(creator.recipe.name).to eq('Recipe Kimchi')
     end
   end
 
@@ -36,16 +36,16 @@ RSpec.describe CreatesProject do
       )}
     end
 
-    describe 'attaches ingredients to the project' do
+    describe 'attaches ingredients to the recipe' do
       let(:ingredients_string) {'Daikon\nFish Sauce'}
       before(:example) { creator.create }
-      specify { expect(creator.project.ingredients.size).to eq(2) }
-      specify { expect(creator.project).not_to be_a_new_record }
+      specify { expect(creator.recipe.ingredients.size).to eq(2) }
+      specify { expect(creator.recipe).not_to be_a_new_record }
     end
 
     describe 'failure cases' do
-      it 'fails when trying to save a project with no name' do
-        creator = CreatesProject.new(name: '', ingredients_string: '')
+      it 'fails when trying to save a recipe with no name' do
+        creator = CreatesRecipe.new(name: '', ingredients_string: '')
         creator.create
         expect(creator).not_to be_a_success
       end

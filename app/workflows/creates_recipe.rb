@@ -1,5 +1,5 @@
-class CreatesProject
-  attr_accessor :name, :project, :ingredients_string
+class CreatesRecipe
+  attr_accessor :name, :recipe, :ingredients_string
 
   def initialize(name: '', ingredients_string: '')
     @name = name
@@ -12,14 +12,14 @@ class CreatesProject
   end
 
   def build
-    self.project = Project.new(name: name)
-    project.ingredients = convert_string_to_ingredients
-    project
+    self.recipe = Recipe.new(name: name)
+    recipe.ingredients = convert_string_to_ingredients
+    recipe
   end
 
   def create
     build
-    result = project.save
+    result = recipe.save
     @success = result
   end
 

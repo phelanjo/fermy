@@ -1,0 +1,17 @@
+<h1>All Recipes</h1>
+  <table>
+    <thead>
+      <tr>
+        <td>Recipe Name</td>
+        <td>Total Num Ingredients</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr class="recipe-row" id="<%= dom_id(recipe) %>">
+          <td class="name"><%= recipe.name %></td>
+          <td class="total-size"><%= recipe.total_size %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

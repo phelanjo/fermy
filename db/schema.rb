@@ -21,17 +21,17 @@ ActiveRecord::Schema.define(version: 2019_05_04_231854) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.integer "project_id"
+    t.integer "recipe_id"
     t.string "name"
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
     t.string "unit"
-    t.index ["project_id"], name: "index_ingredients_on_project_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
-  create_table "projects", force: :cascade do |t|
+  create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
