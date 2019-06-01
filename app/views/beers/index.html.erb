@@ -11,6 +11,7 @@
       <tr class="beer-row" id="<%= dom_id(beer) %>">
         <td class="name"><%= beer.name %></td>
         <td class="beer_type"><%= beer.beer_type %></td>
+        <td><%= link_to 'Edit', edit_beer_path(beer) %></td></td>
       </tr>
     <% end %>
   </tbody>

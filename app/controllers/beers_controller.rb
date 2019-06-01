@@ -17,8 +17,30 @@ class BeersController < ApplicationController
     end
   end
 
+  def edit
+    @beer = Beer.find(params[:id])
+  end
+
+  def update
+    @beer = Beer.find(params[:id])
+
+    if @beer.update(beer_params)
+      redirect_to @beer
+    else
+      render 'edit'
+    end
+  end
+
   def index
     @beers = Beer.all
   end
 
+  def show
+    redirect_to beers_path
+  end
+
+  private
+    def beer_params
+      params.require(:beer).permit(:name, :beer_type, :description)
+    end
 end

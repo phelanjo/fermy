@@ -23,4 +23,20 @@ RSpec.describe 'adding a new fermentation recipe', type: :system do
     click_on('Create Recipe')
     expect(page).to have_selector('.new_recipe')
   end
+
+  it 'allows a user to create a recipe with 1 ingredient' do
+    visit new_recipe_path
+    fill_in 'Name', with: 'Recipe Kimchi'
+    fill_in 'Ingredients', with: 'Fake ingredient'
+    click_on('Create Recipe')
+    visit recipes_path
+    @recipe = Recipe.find_by(name: 'Recipe Kimchi')
+    expect(page).to have_selector(
+      "#recipe_#{@recipe.id} .name", text: 'Recipe Kimchi'
+    )
+    expect(page).to have_selector(
+      "#recipe_#{@recipe.id} .total-size", text: '1'
+    )
+  end
+  
 end
