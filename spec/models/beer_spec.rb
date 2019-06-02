@@ -64,4 +64,17 @@ RSpec.describe Beer do
       expect(mock_beer.perform(big_dependency)).to eq('arbitrary value')
     end
   end
+
+  describe "brewing time" do
+    let(:beer) { build_stubbed(:beer) }
+
+    it 'has no brewing time when instantiated' do
+      expect(beer).to have_brewing_time(nil)
+    end
+
+    it 'can set its brewing time' do
+      beer.set_brewing_time(30)
+      expect(beer).to have_brewing_time(30)
+    end
+  end
 end
