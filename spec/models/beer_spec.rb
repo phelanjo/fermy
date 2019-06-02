@@ -20,7 +20,8 @@ RSpec.describe Beer do
   describe "with user input" do
     let(:factory_beer) { build(:beer, name: "Fake Factory Beer",
                 beer_type: "Fake Factory IPA",
-                description: "First description") }
+                description: "First description",
+                brewing_time: 30) }
 
     it 'can be created' do
       expect(factory_beer).to be_valid

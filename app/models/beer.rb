@@ -2,6 +2,7 @@
 
 class Beer < ApplicationRecord
   validates :name, presence: true
+  validates :brewing_time, presence: true
 
   def perform(big_dependency)
     big_dependency.execute
