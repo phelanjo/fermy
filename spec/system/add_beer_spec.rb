@@ -6,11 +6,9 @@ RSpec.describe "adding a beer", type: :system do
       fill_in "Name", with: "Fake Beer"
       fill_in "Brewing time", with: 30
       click_on("Create Beer")
-      visit beers_path
-      @beer = Beer.find_by(name: "Fake Beer")
-      expect(page).to have_selector("#beer_#{@beer.id} .name", text: "Fake Beer")
-      expect(page).to have_selector("#beer_#{@beer.id} .beer_type", text: "Generic")
-      expect(page).to have_selector("#beer_#{@beer.id} .brewing_time", text: 30)
+      expect(page).to have_selector(".name", text: "Fake Beer")
+      expect(page).to have_selector(".beer_type", text: "Generic")
+      expect(page).to have_selector(".brewing_time", text: 30)
   end
 
   it "does not allow a user to create a beer without a name and brewing time" do
@@ -47,33 +45,26 @@ RSpec.describe "adding a beer", type: :system do
   end
 
   it "allows a user to edit a beer already created" do
-    visit new_beer_path
-    fill_in "Name", with: "Fake Beer"
-    fill_in "Beer type", with: "Fake IPA"
-    fill_in "Description", with: "Fake description"
-    click_on("Create Beer")
-    @beer = Beer.find_by(name: "Fake Beer")
-    click_on("Edit")
+    beer = Beer.create(name: 'Fake', brewing_time: 1)
+    visit edit_beer_path(beer)
     fill_in "Name", with: "Edited Fake Beer"
     fill_in "Beer type", with: "Edited Fake IPA"
     fill_in "Description", with: "Edited Fake description"
+    fill_in "Brewing time", with: 30
     click_on("Update Beer")
     expect(page).to have_selector(".name", text: "Fake Beer")
     expect(page).to have_selector(".beer_type", text: "Fake IPA")
     expect(page).to have_selector(".description", text: "Fake description")
+    expect(page).to have_selector(".brewing_time", text: 30)
   end
 
   it "allows a user to see an individual beer" do
-    visit new_beer_path
-    fill_in "Name", with: "Fake Beer"
-    fill_in "Beer type", with: "Fake IPA"
-    fill_in "Description", with: "Fake description"
-    click_on("Create Beer")
-    @beer = Beer.find_by(name: "Fake Beer")
-    click_on("Show")
+    beer = Beer.create(name: "Fake Beer", beer_type: "Fake IPA", description: "Fake description", brewing_time: 30)
+    visit beers_path(beer)
     expect(page).to have_selector(".name", text: "Fake Beer")
     expect(page).to have_selector(".beer_type", text: "Fake IPA")
     expect(page).to have_selector(".description", text: "Fake description")
+    expect(page).to have_selector(".brewing_time", text: 30)
   end
 
 end
