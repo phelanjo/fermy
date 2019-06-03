@@ -31,12 +31,16 @@ class BeersController < ApplicationController
     end
   end
 
+  def view
+    @beer = Beer.find(params[:id])
+  end
+
   def index
     @beers = Beer.all
   end
 
   def show
-    redirect_to beers_path
+    @beer = Beer.find(params[:id])
   end
 
   private

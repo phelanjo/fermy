@@ -6,7 +6,9 @@
   <br />
   <%= f.label(:beer_type) %>
   <%= f.text_field(:beer_type) %>
-  <%#  f.text_field%>
+  <br />
+  <%= f.label(:description) %>
+  <%= f.text_field(:description, :size => 150) %>
   <br />
   <%= f.submit %>
 <% end %>

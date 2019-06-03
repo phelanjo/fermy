@@ -1,9 +1,13 @@
 <h1>All Beers</h1>
+<td><%= link_to 'Add Beer', new_beer_path %></td></td>
+<br />
+<br />
 <table>
   <thead>
     <tr>
       <td>Beer Name</td>
       <td>Beer Type</td>
+      <td>Beer Description</td>
     </tr>
   </thead>
   <tbody>
@@ -11,8 +15,12 @@
       <tr class="beer-row" id="<%= dom_id(beer) %>">
         <td class="name"><%= beer.name %></td>
         <td class="beer_type"><%= beer.beer_type %></td>
+        <td class="description"><%= beer.description %></td>
         <td><%= link_to 'Edit', edit_beer_path(beer) %></td></td>
+        <td><%= link_to 'Show', beer_path(beer) %></td></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br />
+
