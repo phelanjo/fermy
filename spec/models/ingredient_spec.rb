@@ -1,15 +1,18 @@
 require 'rails_helper.rb'
 
 RSpec.describe Ingredient do
-  it 'is valid with only a name specified' do
+  it 'is only valid with a name specified' do
     ingredient = Ingredient.new
     expect(ingredient.name).to eq(nil)
+    expect(ingredient.description).to eq(nil)
+    expect(ingredient).to be_invalid
+    ingredient.description = "Fake Description"
     expect(ingredient).to be_invalid
     ingredient.name = 'TEST'
     expect(ingredient).to be_valid
   end
 
-  describe 'minimum' do
+  describe 'an ingredient with only a name' do
     let(:default_ingredient) do
       FactoryBot.build_stubbed(:ingredient, name: 'fish sauce')
     end
@@ -31,7 +34,7 @@ RSpec.describe Ingredient do
     end
   end
 
-  describe 'a complete ingredient object' do
+  describe 'an ingredient object' do
     let(:complete_ingredient) do
       FactoryBot.build_stubbed(
         :ingredient,
