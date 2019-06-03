@@ -45,4 +45,35 @@ RSpec.describe "adding a beer", type: :system do
     click_on("Create Beer")
     expect(page).to have_selector(".new_beer")
   end
+
+  it "allows a user to edit a beer already created" do
+    visit new_beer_path
+    fill_in "Name", with: "Fake Beer"
+    fill_in "Beer type", with: "Fake IPA"
+    fill_in "Description", with: "Fake description"
+    click_on("Create Beer")
+    @beer = Beer.find_by(name: "Fake Beer")
+    click_on("Edit")
+    fill_in "Name", with: "Edited Fake Beer"
+    fill_in "Beer type", with: "Edited Fake IPA"
+    fill_in "Description", with: "Edited Fake description"
+    click_on("Update Beer")
+    expect(page).to have_selector(".name", text: "Fake Beer")
+    expect(page).to have_selector(".beer_type", text: "Fake IPA")
+    expect(page).to have_selector(".description", text: "Fake description")
+  end
+
+  it "allows a user to see an individual beer" do
+    visit new_beer_path
+    fill_in "Name", with: "Fake Beer"
+    fill_in "Beer type", with: "Fake IPA"
+    fill_in "Description", with: "Fake description"
+    click_on("Create Beer")
+    @beer = Beer.find_by(name: "Fake Beer")
+    click_on("Show")
+    expect(page).to have_selector(".name", text: "Fake Beer")
+    expect(page).to have_selector(".beer_type", text: "Fake IPA")
+    expect(page).to have_selector(".description", text: "Fake description")
+  end
+
 end
