@@ -25,10 +25,6 @@ class Beer < ApplicationRecord
     description
   end
 
-  def brewing_time?
-    brewing_time
-  end
-
   def replace_description(new_description)
     self.description = new_description
   end
@@ -39,5 +35,13 @@ class Beer < ApplicationRecord
 
   def set_brewing_time(time_in_days)
     self.brewing_time = time_in_days
+  end
+
+  def set_brew_start_date
+    self.brew_start_date = Date.today
+  end
+
+  def set_brew_end_date
+    self.brew_end_date = set_brew_start_date + brewing_time
   end
 end

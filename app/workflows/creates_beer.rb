@@ -1,5 +1,7 @@
 class CreatesBeer
-  attr_accessor :name, :beer, :beer_type, :description, :brewing_time
+  attr_accessor :name, :beer, :beer_type,
+                :description, :brewing_time,
+                :brew_start_date, :brew_end_date
 
   def initialize(options = {})
     @name = options[:name] || nil
@@ -10,6 +12,8 @@ class CreatesBeer
     end
     @description = options[:description] || nil
     @brewing_time = options[:brewing_time] || nil
+    @brew_start_date = options[:brew_start_date] || nil
+    @brew_end_date = options[:brew_end_date] || nil
     @success = false
   end
 
@@ -22,7 +26,9 @@ class CreatesBeer
       name: name, 
       beer_type: beer_type, 
       description: description,
-      brewing_time: brewing_time)
+      brewing_time: brewing_time,
+      brew_start_date: brew_start_date,
+      brew_end_date: brew_end_date)
     beer
   end
 

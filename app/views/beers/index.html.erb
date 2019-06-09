@@ -9,6 +9,8 @@
       <td>Beer Type</td>
       <td>Beer Description</td>
       <td>Brewing Time</td>
+      <td>Brew Start Date</td>
+      <td>Brew End Date</td>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +19,9 @@
         <td class="name"><%= beer.name %></td>
         <td class="beer_type"><%= beer.beer_type %></td>
         <td class="description"><%= beer.description %></td>
-        <td class="brewing_time"><%= beer.brewing_time %></td>
+        <td class="brewing_time"><%= beer.brewing_time %> days</td>
+        <td class="brew_start_date"><%= beer.set_brew_start_date %></td>
+        <td class="brew_end_date"><%= beer.set_brew_end_date %></td>        
         <td><%= link_to 'Edit', edit_beer_path(beer) %></td></td>
         <td><%= link_to 'Show', beer_path(beer) %></td></td>
       </tr>

@@ -73,9 +73,20 @@ RSpec.describe Beer do
       expect(beer).to have_brewing_time(nil)
     end
 
-    it 'can set its brewing time' do
+    it 'sets its brewing time' do
       beer.set_brewing_time(30)
       expect(beer).to have_brewing_time(30)
+    end
+
+    it 'sets its brewing start date' do
+      beer.set_brew_start_date
+      expect(beer).to have_brew_start_date(Date.today)
+    end
+
+    it 'sets its brewing end date' do
+      beer.set_brewing_time(30)
+      beer.set_brew_end_date
+      expect(beer). to have_brew_end_date(Date.today + beer.brewing_time)
     end
   end
 end

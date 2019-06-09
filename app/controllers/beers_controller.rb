@@ -8,7 +8,9 @@ class BeersController < ApplicationController
       name: params[:beer][:name],
       beer_type: params[:beer][:beer_type],
       description: params[:beer][:description],
-      brewing_time: params[:beer][:brewing_time])
+      brewing_time: params[:beer][:brewing_time],
+      brew_start_date: params[:beer][:brew_start_date],
+      brew_end_date: params[:beer][:brew_end_date])
     @workflow.create
     if (@workflow.success?)
       redirect_to beers_path
@@ -46,6 +48,6 @@ class BeersController < ApplicationController
 
   private
     def beer_params
-      params.require(:beer).permit(:name, :beer_type, :description, :brewing_time)
+      params.require(:beer).permit(:name, :beer_type, :description, :brewing_time, :brew_start_date, :brew_end_date)
     end
 end

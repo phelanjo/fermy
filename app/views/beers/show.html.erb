@@ -15,7 +15,17 @@
 
 <p>
   <strong>Brewing Time:</strong>
-  <div class="brewing_time"><%= @beer.brewing_time %></div>
+  <div class="brewing_time"><%= @beer.brewing_time %> days</div>
+</p>
+
+<p>
+  <strong>Brewing Start Date:</strong>
+  <div class="brew_start_time"><%= @beer.set_brew_start_date %></div>
+</p>
+
+<p>
+  <strong>Brewing End Date:</strong>
+  <div class="brew_end_date"><%= @beer.set_brew_end_date %></div>
 </p>
  
 <%= link_to 'Back', beers_path %>
